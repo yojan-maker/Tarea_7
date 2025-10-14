@@ -1,5 +1,20 @@
-# 🧠 1. ¿Cuál es el significado de la información que me expone `htop`?  
-## y ¿cómo la puedo complementar con `glances`, `ifconfig`, `nmap` y `lynis`?
+# 🧠 Análisis y Monitoreo del Sistema en Linux  
+
+---
+
+## 📘 Introducción
+
+Este repositorio recopila el desarrollo y documentación de **herramientas esenciales para la administración y diagnóstico de sistemas Linux**, enfocándose en el análisis de rendimiento, la exploración de red y la gestión de protocolos IP.  
+
+Los temas abordados son los siguientes:
+
+1. **Interpretación de la información de `htop`** y su complemento con herramientas como `glances`, `ifconfig`, `nmap` y `lynis`.  
+2. **Comprensión de IPv4 e IPv6**, junto con los comandos utilizados en Ubuntu para explorar direcciones de red.  
+3. **Instalación y configuración del entorno en Arch Linux** para la ejecución de estas herramientas.
+
+---
+
+## 1. ¿Cuál es el significado de la información que me expone `htop`? y ¿cómo la puedo complementar con `glances`, `ifconfig`, `nmap` y `lynis`?
 
 ---
 
