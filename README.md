@@ -203,7 +203,7 @@ Actualmente existen dos versiones principales en uso: **IPv4** y **IPv6**, cada 
 - Es la versión más ampliamente utilizada, aunque su espacio de direcciones ya está agotado.
 - Soporta técnicas como **NAT (Network Address Translation)** para extender su vida útil.
 
-<img width="1024" height="614" alt="Image" src="https://github.com/user-attachments/assets/0228b674-7ca6-432a-857c-aae14c299645" />
+<img width="650" height="450" alt="Image" src="https://github.com/user-attachments/assets/0228b674-7ca6-432a-857c-aae14c299645" />
 
 ---
 
