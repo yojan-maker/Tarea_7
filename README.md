@@ -10,8 +10,6 @@ Muestra información sobre el uso del CPU, la memoria RAM, la memoria de interca
 
 A diferencia del clásico `top`, `htop` ofrece una interfaz más intuitiva, colorida y navegable, permitiendo desplazarse por los procesos, ordenarlos, filtrarlos o finalizarlos fácilmente.
 
-> (imagen de `htop` mostrando los procesos y el uso del CPU)
-
 ---
 
 ## 🧩 Información que muestra `htop`
@@ -51,8 +49,6 @@ Los colores indican distintos tipos de actividad:
 > Un alto valor de `iowait` indica que el sistema está esperando operaciones de disco,  
 > mientras que un `user` alto significa que procesos del usuario están usando intensamente la CPU.
 
-> (imagen de las barras de CPU en `htop`)
-
 ---
 
 ### 🔹 Sección de memoria
@@ -67,7 +63,6 @@ Los colores indican distintos tipos de actividad:
 > Linux usa la memoria libre como caché para mejorar el rendimiento,  
 > por lo tanto, una barra aparentemente “llena” no siempre indica un problema.
 
-> (imagen del uso de memoria RAM en `htop`)
 
 ---
 
@@ -92,7 +87,7 @@ Algunas columnas importantes:
 
 Puedes **ordenar por cualquier columna** con las teclas de función (`F6`) o finalizar procesos con `F9`.
 
-> (imagen de la lista de procesos en `htop`)
+![Image](https://github.com/user-attachments/assets/ff9c3134-e7c5-42f7-a342-dc0b0f440ac1)
 
 ---
 
@@ -175,7 +170,7 @@ Es útil para identificar vulnerabilidades o configuraciones inseguras.
 sudo apt install lynis
 sudo lynis audit system
 ```
-(imagen del reporte final de lynis)
+<img width="791" height="402" alt="Image" src="https://github.com/user-attachments/assets/5e0206d3-4903-4d9c-a31b-ec59739b73cc" />
 
 - Evalúa más de 200 parámetros del sistema.
 - Genera un puntaje de seguridad (hardening index).
@@ -190,3 +185,87 @@ sudo lynis audit system
 
 ---
   
+## 🌐 2. ¿Qué es IPv4 e IPv6? y ¿Qué comandos se usan en Ubuntu para explorar sus direcciones?
+
+
+### 🔹 Introducción
+
+Las direcciones IP (**Internet Protocol**) son identificadores únicos que permiten la comunicación entre dispositivos dentro de una red.  
+Actualmente existen dos versiones principales en uso: **IPv4** y **IPv6**, cada una con características y estructuras distintas.
+
+---
+
+### 🧩 IPv4 (Internet Protocol versión 4)
+
+- Utiliza **32 bits**, lo que permite aproximadamente **4.3 mil millones** de direcciones únicas.
+- Se representa en formato **decimal con puntos**, por ejemplo:  192.168.1.10
+
+- Es la versión más ampliamente utilizada, aunque su espacio de direcciones ya está agotado.
+- Soporta técnicas como **NAT (Network Address Translation)** para extender su vida útil.
+
+<img width="1024" height="614" alt="Image" src="https://github.com/user-attachments/assets/0228b674-7ca6-432a-857c-aae14c299645" />
+
+---
+
+### 🧩 IPv6 (Internet Protocol versión 6)
+
+- Usa **128 bits**, permitiendo un número casi ilimitado de direcciones (≈ 3.4 × 10³⁸).
+- Se representa en **formato hexadecimal**, separado por dos puntos:  2001:0db8:85a3:0000:0000:8a2e:0370:7334
+- No requiere NAT, ya que cada dispositivo puede tener una dirección única.
+- Incorpora mejoras como:
+- **Autoconfiguración automática (SLAAC)**
+- **Soporte nativo para IPsec (seguridad)**
+- **Encabezado más simple y eficiente**
+
+![Image](https://github.com/user-attachments/assets/51f001b0-c8b4-4ec7-82a2-d91a4be846e8)
+
+---
+
+### ⚙️ Comparativa General
+
+| Característica | IPv4 | IPv6 |
+|----------------|------|------|
+| Tamaño de dirección | 32 bits | 128 bits |
+| Formato | Decimal con puntos (192.168.0.1) | Hexadecimal (2001:db8::1) |
+| Espacio de direcciones | ~4.3 × 10⁹ | ~3.4 × 10³⁸ |
+| NAT (Traducción de direcciones) | Requerido | No necesario |
+| Seguridad (IPsec) | Opcional | Integrado |
+| Encabezado | Variable | Fijo (40 bytes) |
+
+---
+
+### 💻 Comandos en Ubuntu para explorar direcciones IP
+
+#### 🔹 Mostrar interfaces y direcciones IP (IPv4/IPv6)
+```bash
+ip addr show
+o
+ip a
+```
+<img width="759" height="294" alt="Image" src="https://github.com/user-attachments/assets/4e0dd9c7-63cb-4f42-99b3-d4abba38a097" />
+
+🔹 Mostrar información específica de una interfaz
+```bash
+ip addr show eth0
+```
+Muestra las direcciones asignadas a la interfaz eth0 (puede variar según el nombre de la interfaz).
+
+🔹 Consultar la ruta predeterminada (gateway)
+```bash
+ip route show
+```
+Permite verificar la puerta de enlace predeterminada y las rutas activas.
+
+<img width="759" height="294" alt="Image" src="https://github.com/user-attachments/assets/f1133663-ab62-4a40-8994-58bba18d241d" />
+
+🔹 Usando la herramienta clásica ifconfig
+```bash
+ifconfig
+```
+Aún disponible en algunos sistemas, muestra las interfaces de red y sus direcciones, aunque ha sido reemplazada por iproute2.
+
+💡 Consejo:
+En versiones recientes de Ubuntu, ifconfig no viene instalado por defecto.
+Para usarlo: sudo apt install net-tools 
+
+---
