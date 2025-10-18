@@ -435,3 +435,16 @@ Iniciar sesión como:
 Usuario: root
 Contraseña: la que configuraste con passwd
 
+---
+
+# 📚 Referencias Bibliográficas  
+
+## Htop
+- htop: monitoriza recursos servidor en tiempo real | Soporte Dongee. (s. f.). https://soporte.dongee.com/es/articles/8233157-htop-monitoriza-recursos-servidor-en-tiempo-real
+- How to Monitor System Resources (`htop`, `glances`) on Arch Linux. (2025, 19 abril). Siberoloji. https://www.siberoloji.com/how-to-monitor-system-resources-htop-glances-on-arch-linux/#google_vignette
+
+## Ipv4 - Ipv6
+- Freda, A. (2022, 6 septiembre). ¿Qué diferencia hay entre IPv4 e IPv6? ¿Qué Diferencia Hay Entre IPv4 E IPv6? https://www.avg.com/es/signal/ipv4-vs-ipv6
+
+## Instalación Arch Linux 
+- Installation guide - ArchWiki. (s. f.). https://wiki.archlinux.org/title/Installation_guide
