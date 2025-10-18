@@ -284,3 +284,33 @@ En versiones recientes de Ubuntu, ifconfig no viene instalado por defecto.
 Para usarlo: sudo apt install net-tools 
 
 ---
+
+## Proceso de instalación de arch-linux.
+
+![Image](https://github.com/user-attachments/assets/71c73394-a370-45cf-bb22-aaf14f93494a)
+> - Abrimos el virt manager
+---
+
+![Image](https://github.com/user-attachments/assets/d0d82e15-5e45-4d64-b8bb-c216e1f59d78)
+> - Seleccionamos la seccion de archivo
+---
+
+![Image](https://github.com/user-attachments/assets/72966093-14c2-4b92-8985-34ee0e2f76a4)
+> - Creamos la maquina virtual
+---
+
+![Image](https://github.com/user-attachments/assets/6e395d4a-21e7-4c5e-b8c4-013e75bfab68)
+> - Seleccionamos forward
+---
+
+![Image](https://github.com/user-attachments/assets/506cfd81-0169-480d-975b-e754fb7e5068)
+> - Le asignamos memoria y cpu
+---
+
+![Image](https://github.com/user-attachments/assets/d0762c1b-a722-4434-b332-29e705d0a2ab)
+> - Le asignamos el espacio en el disco
+---
+
+![Image](https://github.com/user-attachments/assets/6e861d2f-01c0-4af1-9f7b-e210f4337f68)
+> - Comprobamos y aceptamos
+---
