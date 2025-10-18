@@ -160,7 +160,7 @@ ip addr show
 - Identifica las direcciones IPv4 e IPv6 del sistema.
 - Verifica si una interfaz está activa (UP) o no.
 - Permite comprobar conectividad o configuraciones erróneas de red.
-(imagen de la salida de ifconfig o ip addr show)
+
 
 ### nmap — escaneo de red y puertos
 nmap permite descubrir hosts activos y puertos abiertos dentro de una red.
