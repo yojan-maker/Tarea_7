@@ -314,3 +314,124 @@ Para usarlo: sudo apt install net-tools
 ![Image](https://github.com/user-attachments/assets/6e861d2f-01c0-4af1-9f7b-e210f4337f68)
 > - Comprobamos y aceptamos
 ---
+## 🖥️ 2. Configuración inicial en el instalador de Arch
+
+Una vez dentro del entorno del instalador:
+
+1. ***Verificar conexión a internet:***
+   ```bash
+   ping archlinux.org
+
+2. ***Actualizar reloj del sistema:***
+   ```bash
+   timedatectl set-ntp true
+3. ***Particionado del disco***
+   ```bash
+   cfdisk /dev/vda
+-Seleccionar GPT como tipo de tabla.
+-Crear dos particiones:
+-Partición 1: 1 MB → tipo BIOS boot
+-Partición 2: resto del espacio → tipo Linux filesystem
+-Guardar con [Write], escribir yes y salir con [Quit].
+
+4. ***Formatear y montar particiones***
+   Formatear la partición principal en ext4:
+   ```bash
+   mkfs.ext4 /dev/vda2
+Montar la partición raíz:
+   ```bash
+   mount /dev/vda2 /mnt
+   ```
+5. ***Instalación del sistema base***
+   ```bash
+   pacstrap /mnt base linux linux-firmware vim nano
+Generar el archivo fstab:
+   ```bash
+   genfstab -U /mnt >> /mnt/etc/fstab
+```
+Entrar al nuevo sistema:
+   ```bash
+   arch-chroot /mnt
+ ```
+6. ***Configuración del sistema***
+   Configurar la zona horaria:
+   ```bash
+   ln -sf /usr/share/zoneinfo/America/Bogota /etc/localtime
+   hwclock --systohc
+Configurar localización:
+Editar /etc/locale.gen y descomentar:
+   ```bash
+   en_US.UTF-8 UTF-8
+   es_CO.UTF-8 UTF-8
+   ```
+Luego generar:
+   ```bash
+   locale-gen
+   ```
+Crear /etc/locale.conf:
+   ```bash
+   echo "LANG=en_US.UTF-8" > /etc/locale.conf
+   ```
+Configurar el nombre del host:
+   ```bash
+   echo "archlinux" > /etc/hostname
+   ```
+Editar /etc/hosts:
+   ```bash
+   127.0.0.1   localhost
+   ::1         localhost
+   127.0.1.1   archlinux.localdomain archlinux
+   ```
+7. ***Configurar usuario y contraseñas***
+Crear contraseña para root:
+   ```bash
+   passwd
+(Opcional) Crear un usuario normal:
+   ```bash
+   useradd -m -G wheel -s /bin/bash user
+   passwd user
+   ```
+Editar sudoers:
+   ```bash
+   EDITOR=nano visudo
+   ```
+Descomentar la línea:
+   ```bash
+   %wheel ALL=(ALL:ALL) ALL
+   ```
+8. ***Habilitar red***
+Instalar y activar NetworkManager:
+   ```bash
+   pacman -S networkmanager
+   systemctl enable NetworkManager
+   ```
+9. ***Instalar GRUB (gestor de arranque)***
+Instalar GRUB:
+   ```bash
+   pacman -S grub
+   ```
+Instalar en el disco (BIOS/MBR):
+   ```bash
+   grub-install --target=i386-pc /dev/vda
+   ```
+Generar configuración:
+   ```bash
+   grub-mkconfig -o /boot/grub/grub.cfg
+   ```
+10. ***Finalizar instalación***
+    ```bash
+    exit
+   umount -R /mnt
+   reboot
+   ```
+   💡 Importante: retirar el ISO del arranque en Virt-Manager antes de reiniciar.
+   ```
+11. ***Primer inicio***
+Una vez reiniciado, aparecerá:
+   ```bash
+   Arch Linux login:
+   ```
+Iniciar sesión como:
+Usuario: root
+Contraseña: la que configuraste con passwd
+
